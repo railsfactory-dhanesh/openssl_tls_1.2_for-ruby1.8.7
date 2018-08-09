@@ -1,6 +1,7 @@
+diff --git a/ext/openssl/ossl_ssl.c b/ext/openssl/ossl_ssl.c
 --- a/ext/openssl/ossl_ssl.c
 +++ b/ext/openssl/ossl_ssl.c
-@@ -101,6 +101,18 @@
+@@ -107,6 +107,18 @@
      OSSL_SSL_METHOD_ENTRY(TLSv1),
      OSSL_SSL_METHOD_ENTRY(TLSv1_server),
      OSSL_SSL_METHOD_ENTRY(TLSv1_client),
@@ -17,11 +18,12 @@
 +    OSSL_SSL_METHOD_ENTRY(TLSv1_1_client),
 +#endif
  #if defined(HAVE_SSLV2_METHOD) && defined(HAVE_SSLV2_SERVER_METHOD) && \
-         defined(HAVE_SSLV2_CLIENT_METHOD)  
+         defined(HAVE_SSLV2_CLIENT_METHOD)
      OSSL_SSL_METHOD_ENTRY(SSLv2),
+diff --git a/ext/openssl/extconf.rb b/ext/openssl/extconf.rb
 --- a/ext/openssl/extconf.rb
 +++ b/ext/openssl/extconf.rb
-@@ -103,6 +103,12 @@
+@@ -104,6 +104,12 @@
  have_func("SSLv2_method")
  have_func("SSLv2_server_method")
  have_func("SSLv2_client_method")
